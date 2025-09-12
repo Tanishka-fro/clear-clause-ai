@@ -253,13 +253,14 @@ export default function Home({ currentLanguage }: HomeProps) {
                     {t.hero.cta}
                   </Button>
                 </Link>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-white text-white hover:bg-white hover:text-primary"
-                >
-                  {t.hero.upload}
-                </Button>
+                <Link to="/upload">
+                  <Button 
+                    size="lg" 
+                    className="bg-white text-primary hover:bg-white/90"
+                  >
+                    {t.hero.upload}
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="animate-slide-up">
