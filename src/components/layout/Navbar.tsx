@@ -16,6 +16,7 @@ export function Navbar({ onLanguageToggle, currentLanguage }: NavbarProps) {
     { href: "/", label: "Home", labelHi: "होम" },
     { href: "/about", label: "About", labelHi: "हमारे बारे में" },
     { href: "/upload", label: "Upload", labelHi: "अपलोड" },
+    { href: "/profile", label: "Profile", labelHi: "प्रोफ़ाइल" },
     { href: "/help", label: "Help", labelHi: "सहायता" },
     { href: "/contact", label: "Contact", labelHi: "संपर्क" },
   ];

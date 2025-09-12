@@ -7,6 +7,7 @@ import { Layout } from "@/components/layout/Layout";
 import Home from "./pages/Home";
 import DocumentUpload from "./pages/DocumentUpload";
 import DocumentAnalysis from "./pages/DocumentAnalysis";
+import Profile from "./pages/Profile";
 import About from "./pages/About";
 import Help from "./pages/Help";
 import Contact from "./pages/Contact";
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="/" element={<Home currentLanguage={currentLanguage} />} />
               <Route path="/upload" element={<DocumentUpload currentLanguage={currentLanguage} />} />
               <Route path="/analysis" element={<DocumentAnalysis currentLanguage={currentLanguage} />} />
+              <Route path="/profile" element={<Profile currentLanguage={currentLanguage} />} />
               <Route path="/about" element={<About currentLanguage={currentLanguage} />} />
               <Route path="/help" element={<Help currentLanguage={currentLanguage} />} />
               <Route path="/contact" element={<Contact currentLanguage={currentLanguage} />} />
