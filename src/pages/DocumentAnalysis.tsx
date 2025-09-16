@@ -118,41 +118,92 @@ export default function DocumentAnalysis({ currentLanguage }: DocumentAnalysisPr
   const analysisData = {
     riskLevel: 75,
     confidenceScore: 92,
-    totalClauses: 8,
-    safeClauses: 5,
+    totalClauses: 11,
+    safeClauses: 6,
     moderateClauses: 2,
-    highRiskClauses: 1
+    highRiskClauses: 3
   };
 
   const mockClauses = [
     {
       id: 1,
-      text: "The employee agrees to work exclusively for the company during the term of employment.",
-      type: "Non-compete Clause",
+      text: "The Licensor hereby grants to the Licensees a revocable leave and license to occupy the premises for a period of 11 months commencing from 01/06/2024 and ending on 30/04/2025.",
+      type: "Period Clause",
       risk: "safe",
-      explanation: "Standard exclusivity clause commonly found in employment contracts."
+      explanation: "Standard duration clause; clearly defines the license period without creating tenancy rights."
     },
     {
       id: 2,
-      text: "Company may terminate employment at any time without prior notice or cause.",
-      type: "Termination Clause",
-      risk: "high",
-      explanation: "This clause gives the company unlimited termination rights which may be unfavorable to the employee."
+      text: "The Licensees shall pay to the Licensor License fee at the rate of Rs.11,000 per month, payable within first five days of the concerned month.",
+      type: "License Fee & Deposit Clause",
+      risk: "safe",
+      explanation: "Clear payment terms with reasonable timeline; protects both parties."
     },
     {
       id: 3,
-      text: "Employee shall receive salary payments on the last working day of each month.",
-      type: "Compensation Clause", 
+      text: "All outgoings including rates, taxes, levies, assessment, maintenance charges, non-occupancy charges, etc. in respect of the said premises shall be paid by the Licensor.",
+      type: "Maintenance Charges Clause", 
       risk: "safe",
-      explanation: "Standard payment terms with clear schedule."
+      explanation: "Favorable to Licensees, as landlord bears standard property costs."
     },
     {
       id: 4,
-      text: "All intellectual property created during employment belongs to the company.",
-      type: "IP Assignment",
+      text: "The Licensees shall pay the electricity bills directly for energy consumed on the licensed premises and submit receipts to the Licensor.",
+      type: "Electricity Charges Clause",
+      risk: "safe",
+      explanation: "Fair and standard practice ensuring transparency."
+    },
+    {
+      id: 5,
+      text: "The Licensed premises shall only be used by the Licensees for Residential purpose. The Licensees shall not do anything unlawful or likely to cause nuisance.",
+      type: "Use of Premises Clause",
       risk: "moderate",
-      explanation: "Broad IP assignment clause - ensure it's limited to work-related creations."
-    }
+      explanation: "Reasonable restrictions, but vague terms like 'nuisance' could be interpreted broadly against Licensees."
+    },
+    {
+      id: 6,
+      text: "The Licensees shall not make or permit any alteration or addition to the premises without prior written consent of the Licensor.",
+      type: "Alteration Clause",
+      risk: "safe",
+      explanation: "Typical landlord protection clause; safe as long as intent is clear."
+    },
+    {
+      id: 7,
+      text: "The Licensees shall not claim any tenancy right, nor transfer, assign, sublet, or mortgage the premises.",
+      type: "No Tenancy Clause",
+      risk: "high",
+      explanation: "Protects Licensor strongly; limits Licensee rights significantly, common in such agreements but can be restrictive."
+    },
+    {
+      id: 8,
+      text: "The Licensor shall, on reasonable notice, have a right to enter, view and inspect the premises at reasonable intervals.",
+      type: "Inspection Clause",
+      risk: "moderate",
+      explanation: "Reasonable in principle, but 'reasonable intervals' is vague and could be abused if not clarified."
+    },
+    {
+      id: 9,
+      text: "If Licensees default on payment or breach conditions, the Licensor may revoke by one month’s written notice. The Licensees also may vacate with one month’s written notice.",
+      type: "Cancellation Clause",
+      risk: "high",
+      explanation: "Termination rights are balanced, but risk is higher for Licensees since minor breaches could trigger termination."
+    },
+    {
+      id: 10,
+      text: "On termination, if the Licensees fail to vacate, the Licensor may recover damages at double the daily compensation rate and remove Licensees without recourse to Court.",
+      type: "Possession & Damages Clause",
+      risk: "high",
+      explanation: "Heavily favors Licensor; exposes Licensees to financial and legal risk."
+    },
+    {
+      id: 11,
+      text: "The Agreement is to be registered and the expenditure of Stamp duty and registration fees shall be borne equally by the Licensee and Licensor.",
+      type: "Registration & Stamp Duty Clause",
+      risk: "safe",
+      explanation: "Balanced and fair allocation of costs."
+    },
+
+
   ];
 
   const getRiskColor = (risk: string) => {
@@ -301,17 +352,18 @@ export default function DocumentAnalysis({ currentLanguage }: DocumentAnalysisPr
                 <h3 className="text-lg font-semibold mb-4">{t.summary.title}</h3>
                 <Card className="bg-muted/50">
                   <CardContent className="pt-4">
-                    <p className="text-sm leading-relaxed mb-4">
-                      This employment contract establishes a standard employer-employee relationship with typical clauses for compensation, responsibilities, and termination. However, there are some areas of concern that require attention.
+                    <p className="text-sm leading-relaxed mb-4"> 
+                     This Leave and License Agreement sets out a standard arrangement between a Licensor (property owner) and Licensees (occupants) for residential use of a flat. The agreement includes typical clauses on rent, duration, and usage but also contains some restrictive conditions that favor the Licensor.
                     </p>
                     <h4 className="font-semibold mb-2">{t.summary.keyPoints}:</h4>
-                    <ul className="text-sm space-y-2 list-disc list-inside text-muted-foreground">
-                      <li>Standard salary and benefit structure</li>
-                      <li>Broad intellectual property assignment clause</li>
-                      <li>At-will termination clause that favors employer</li>
-                      <li>Non-compete restrictions during employment</li>
-                      <li>Clear job responsibilities and expectations</li>
-                    </ul>
+                  <ul className="text-sm space-y-2 list-disc list-inside text-muted-foreground">
+                    <li>Clear license period of 11 months with fixed monthly rent</li>
+                    <li>Licensor bears maintenance and taxes; Licensees pay electricity</li>
+                    <li>Strict “no tenancy rights” clause preventing subletting or ownership claims</li>
+                    <li>One-month termination notice for either party, but breaches allow Licensor stronger rights</li>
+                    <li>Heavy penalty (double rent) if Licensees overstay after termination</li>
+                    <li>Restrictions on alterations, usage, and possible broad interpretation of “nuisance”</li>
+                  </ul>
                   </CardContent>
                 </Card>
               </TabsContent>

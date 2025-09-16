@@ -60,7 +60,7 @@ export function Footer({ currentLanguage }: FooterProps) {
             <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 8788671041</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
@@ -68,11 +68,10 @@ export function Footer({ currentLanguage }: FooterProps) {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
-                <span>Mumbai, India</span>
+                <span>Pune, India</span>
               </div>
             </div>
           </div>
-
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([key, section]) => (
             <div key={key} className="space-y-4">

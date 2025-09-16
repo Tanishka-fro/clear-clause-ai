@@ -32,7 +32,7 @@ export default function About({ currentLanguage }: AboutProps) {
         stats: [
           { value: "78%", label: "of people find legal documents confusing" },
           { value: "45%", label: "have signed contracts without understanding" },
-          { value: "₹50K+", label: "average cost of legal consultation" }
+          { value: "₹8K+", label: "average cost of legal consultation" }
         ]
       },
       solution: {
@@ -73,25 +73,31 @@ export default function About({ currentLanguage }: AboutProps) {
       },
       team: {
         title: "Our Team",
-        description: "A passionate group of legal experts, AI researchers, and technology enthusiasts",
+        description: "A passionate group of developers, AI researchers, and technology enthusiasts",
         members: [
           {
-            name: "Dr. Priya Sharma",
-            role: "Legal Expert & Co-founder",
-            expertise: "Constitutional Law, Corporate Governance",
-            experience: "15+ years in legal practice"
+            name: "Tanishka Singh",
+      
+            expertise: "tanishka.singh23@vit.edu",
+            experience: ""
           },
           {
-            name: "Rahul Mehta",
-            role: "AI Research Lead",
-            expertise: "NLP, Machine Learning, Legal-BERT",
-            experience: "PhD in Computer Science, IIT Delhi"
+            name: "Purvi Solanki",
+            role: "",
+            expertise: "purvi.solanki23@vit.edu",
+            experience: ""
           },
           {
-            name: "Anita Verma",
-            role: "Product Manager",
-            expertise: "UX Design, Rural Technology Adoption",
-            experience: "10+ years in fintech and legaltech"
+            name: "Nimish Somani",
+            role: "",
+            expertise: "nimish.somani23@vit.edu",
+            experience: ""
+          },
+          {
+            name: "Aditya Solunke",
+            role: "",
+            expertise: "aditya.solunke23@vit.edu",
+            experience: ""
           }
         ]
       },

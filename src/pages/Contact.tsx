@@ -57,7 +57,7 @@ export default function Contact({ currentLanguage }: ContactProps) {
         title: "Contact Information",
         office: {
           title: "Head Office",
-          address: "Tech Park, Sector 21, Mumbai, Maharashtra 400001",
+          address: "Vishwakarma Institute of Technology, Pune 411037",
           phone: "+91 98765 43210",
           email: "contact@legalai.in"
         },

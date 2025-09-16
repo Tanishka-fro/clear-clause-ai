@@ -44,7 +44,7 @@ export default function Profile({ currentLanguage = "en" }: ProfileProps) {
 
   // Mock user data (will be replaced with real data later)
   const userInfo = {
-    name: "John Doe",
+    name: "Tanishka Singh",
     phone: "+91 98765 43210",
     aadhaar: "XXXX XXXX 1234"
   };
@@ -53,17 +53,17 @@ export default function Profile({ currentLanguage = "en" }: ProfileProps) {
   const documentHistory = [
     {
       id: "1",
-      name: "Employment_Contract_TechCorp.pdf",
-      type: "Employment Contract",
-      uploadDate: "2024-01-15",
+      name: "LEAVE AND LICENCSE AGREEMENT.pdf",
+      type: "Rental Agreement",
+      uploadDate: "2025-09-16",
       status: "processed",
       riskLevel: "low"
     },
     {
       id: "2", 
-      name: "Rental_Agreement_Mumbai.pdf",
+      name: "Rental_Agreement.pdf",
       type: "Rental Agreement",
-      uploadDate: "2024-01-10",
+      uploadDate: "2024-09-15",
       status: "processed",
       riskLevel: "medium"
     },
@@ -71,7 +71,7 @@ export default function Profile({ currentLanguage = "en" }: ProfileProps) {
       id: "3",
       name: "Business_Partnership_Agreement.pdf", 
       type: "Business Agreement",
-      uploadDate: "2024-01-05",
+      uploadDate: "2024-09-15",
       status: "processed",
       riskLevel: "high"
     }
